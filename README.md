@@ -4,7 +4,7 @@
 ![Built with](https://img.shields.io/badge/built%20with-HTML%2FCSS%2FJS-ff69b4)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 
-![NeonVerse Preview](./assets/image/preview/preview-neonverse.PNG)
+![NeonVerse Preview](./assets/image/preview/preview.PNG)
 
 **NeonVerse** is a futuristic NFT-themed website prototype that blends stunning visuals, smooth animations, and intuitive user experience into one dynamic landing page. Designed to capture attention with vibrant neon aesthetics and interactivity, this prototype showcases the creative vision of a modern NFT project.
 
