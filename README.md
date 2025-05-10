@@ -84,7 +84,7 @@ This project is built to:
    git clone https://github.com/yourusername/neonverse.git
    cd neonverse
 2. Open index.html in your browser — no server required.
-3. You can go to NeonVerse Demo -> neonverse.vercel.app
+3. You can go to NeonVerse Demo -> [neonverse.vercel.app](https://neonverse-eight.vercel.app/)
 
 ## 🧑‍🚀 Author
 Created with 💡 and 🔥 by @zEntry6
