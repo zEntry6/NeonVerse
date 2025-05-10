@@ -1,0 +1,470 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --bg-dark: #0d0d0d;
+    --text-light: #f0f0f0;
+    --neon-purple: #a020f0;
+    --neon-pink: #ff1aff;
+    --neon-blue: #00eaff;
+    --neon-green: #00ff88;
+  }
+  
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    background-color: #111;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .nav-desktop ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-desktop a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-desktop a:hover {
+    color: #0ff;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  /* Fullscreen Menu */
+  .fullscreen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .fullscreen-menu nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .fullscreen-menu a {
+    font-size: 2rem;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+  }
+  
+  .fullscreen-menu a:hover {
+    color: var(--neon-blue);
+  }
+  
+  .fullscreen-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fullscreen-menu.active {
+    display: flex;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    background-image: url('../image/bg/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn, .btn-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn {
+    background: var(--neon-green);
+    color: #000;
+    border: none;
+    box-shadow: 0 0 10px var(--neon-green);
+  }
+  
+  .btn:hover {
+    box-shadow: 0 0 20px var(--neon-green);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--neon-purple);
+    color: var(--neon-purple);
+  }
+  
+  .btn-outline:hover {
+    background: var(--neon-purple);
+    color: #000;
+    box-shadow: 0 0 10px var(--neon-purple);
+  }
+  
+  /* GALLERY */
+  .gallery {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .gallery h2 {
+    font-size: 2rem;
+    color: var(--neon-blue);
+    margin-bottom: 2rem;
+  }
+  
+  .nft-slider {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    align-items: center; /* Menjaga elemen tetap terpusat vertikal */
+  }
+  
+  .nft-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nft-card {
+    min-width: 250px; /* Lebar minimal kartu */
+    background: #1a1a1a;
+    border: 2px solid var(--neon-purple);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-light);
+    box-shadow: 0 0 10px var(--neon-purple);
+    transition: transform 0.3s ease;
+  }
+  
+  .nft-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-purple);
+  }
+  
+  .nft-card img {
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .status {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  
+  .status.available {
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+  }
+  
+  .status.sold {
+    color: var(--neon-pink);
+    border: 1px solid var(--neon-pink);
+  }
+  
+  /* ROADMAP */
+  .roadmap {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .roadmap h2 {
+    font-size: 2rem;
+    color: var(--neon-blue);
+    margin-bottom: 2rem;
+  }
+  
+  .timeline {
+    display: grid;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .milestone {
+    background-color: #141414;
+    border-left: 4px solid var(--neon-blue);
+    padding: 1rem 1.5rem;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--neon-blue);
+    transition: 0.3s ease;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .milestone h3 {
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+  }
+  
+  .milestone.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* TEAM SECTION */
+  .team {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .team h2 {
+    font-size: 2rem;
+    color: var(--neon-pink);
+    margin-bottom: 2rem;
+  }
+  
+  .team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .team-member {
+    background: #1b1b1b;
+    border: 2px solid var(--neon-pink);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 0 12px var(--neon-pink);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .team-member.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--neon-pink);
+  }
+  
+  /* JOIN SECTION */
+  .join {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #0d0d0d;
+  }
+  
+  .join h2 {
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+  }
+  
+  .join p {
+    margin-bottom: 1.5rem;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  form input {
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    border: 2px solid var(--neon-green);
+    background: transparent;
+    color: var(--text-light);
+    font-size: 1rem;
+    min-width: 250px;
+  }
+  
+  form button {
+    padding: 0.75rem 1.5rem;
+    background: var(--neon-green);
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  form button:hover {
+    box-shadow: 0 0 15px var(--neon-green);
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #0c0c0c;
+    border-top: 1px solid var(--neon-purple);
+    margin-top: 3rem;
+  }
+  
+  .socials {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .socials img {
+    width: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+  }
+  
+  .socials img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* SCROLL ANIMATION */
+  .nft-card, .milestone, .team-member {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    header {
+      padding: 10px 20px;
+    }
+  
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+  
+    .nft-slider {
+      gap: 1rem;
+    }
+  
+    .team-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-desktop {
+      display: none;
+    }
+  }
+  
